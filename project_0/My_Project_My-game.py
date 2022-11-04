@@ -3,12 +3,10 @@
 """
 import numpy as np
 
-a = int(input('Введите начальное число: '))
-b = int(input('Введите конечное число: '))
 
-number = np.random.randint(a, b) # загадываем рандомное число, используя генератор рандомных чисел
+number = np.random.randint(1, 101) # загадываем рандомное число, используя генератор рандомных чисел
 
-def random_predict(number) -> int:
+def random_predict(number: int = 1) -> int:
     
     """Компьютер угадывает рандомное число
 
@@ -26,14 +24,14 @@ def random_predict(number) -> int:
         
         count += 1
         
-        md = round((min_number + max_number)//2)
+        shot = round((min_number + max_number)/2)
         
-        if md > number:
-            max_number = md
-        elif md < number:
-            min_number = md
+        if shot > number:
+            max_number = shot
+        elif shot < number:
+            min_number = shot
         else:
-            print(f'Компьютер загадал число: {number}')
+            print(f'Загаданное число: {number}')
             
             break # конец игры и выход из цикла
         
