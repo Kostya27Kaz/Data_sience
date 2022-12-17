@@ -1,3 +1,5 @@
 import numpy as np
-a = np.int64(270)
-print(np.iinfo(a))
+workers = ['Ivan', 'Nikita', 'Maria', 'John', 'Kate']
+ 
+choice = np.random.choice(workers, size=2, replace=False)
+print(choice)
